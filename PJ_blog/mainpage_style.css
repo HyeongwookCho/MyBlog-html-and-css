@@ -1,0 +1,308 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    overflow-x:hidden;
+    margin: 0;
+}
+.vid-header{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    z-index: -1;
+}
+.container{
+    max-width: 960px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: auto;
+    text-align: center;
+}
+.fullscreen-vid-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.fullscreen-vid-wrap video{
+    min-width: 100%;
+    min-height: 100%;
+}
+.header-overlay{
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #224570;
+    z-index: 0;
+    opacity: 0.65;
+}
+.header-content{
+    z-index: 2;
+    padding-left: 50px;
+}
+
+.header-content h1{
+    font-size: 50px;
+    margin-bottom: 0;
+}
+.header-content p{
+    font-size: 1.5rem;
+    display: block;
+    padding-bottom: 2rem;
+}
+
+.section-a{
+    padding: 20px 0;
+    text-align: center;
+    
+}
+.section-b{
+    padding: 20px 0;
+    background:linear-gradient(to left, #000000, #434343);
+    color: #fff;
+}
+.header-menu-wrap{
+    z-index: 3;
+    align-content: center;
+    display:flex;
+    font-size: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+label{
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: .5s;
+
+}
+.material-icons{
+    font-size: 3rem;
+    margin-right: 10px;
+}
+.bookmark-btt{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 3rem;
+}
+.menu-section{
+    color: #fff;
+    width: 200px;
+    padding-top: 30px;
+    padding-left: 30px;
+    position: absolute;
+    top: 50px;
+    left: -200px;
+    bottom: 0;
+    transition: 1s ease;
+}
+.bookmark-list{
+    padding-left: 45px;
+}
+.bookmark{
+    margin: 30px 0;
+}
+.bookmark:nth-child(1){
+    margin-top: 50px;
+}
+.bookmark a{
+    transition: 0.3s;
+    color: #fff;
+    text-decoration: none;
+}
+.sns-mark > a{
+    color: #fff;
+    font-size: 30px;
+    transition: 0.3s;
+}
+.sns-mark > a:hover{
+    transition: 0.3s;
+    font-size: 50px;
+}
+.bookmark:hover{
+    transition: 0.1s;
+    border-radius: 10px;
+    font: bolder;
+    text-decoration: underline;
+}
+.last-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+    width: fit-content;
+}
+
+.imgbox{
+    position: relative;
+    transition: 0.5s ease;
+    margin: 10px;
+    align-items: center;
+}
+.section-a .text{
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    visibility: hidden;
+    color: black;
+    font-weight: bold;
+}
+.section-b .text{
+    z-index: 1;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    visibility: hidden;
+    color: #fff;
+    font-weight: bold;
+}
+.imgbox:hover .last-content-img{
+    opacity: 0.5;
+    transition: 0.5s;
+    transform: translateY(-5px);
+    border:4px solid #fff;
+}
+.imgbox:hover .text{
+    visibility: visible;
+}
+.last-content-img{
+    border-radius: 20px;
+    width: 300px;
+    height: auto;
+}
+.mvsection{
+    margin-top: 2rem;
+    text-align: center;
+}
+.slidelist .slideitem{
+    list-style:none;
+}
+.slidebox {
+    max-width:700px;
+    margin:0 auto;
+    position:relative;
+}
+.slidebox .slidelist {
+    position:relative;
+    white-space:nowrap;
+    font-size:0;
+    overflow:hidden;
+}
+.slidebox .slidelist .slideitem {
+    position:relative;
+    display:inline-block;
+    vertical-align:middle;
+    background-color:#fff;
+    width:100%;
+    transition:all 1s;
+}
+.slidebox .slidelist .slideitem > a {
+    display:block;
+    width:auto;
+    position:relative;
+}
+.slidebox .slidelist .slideitem > a img {
+    width:100%;
+    border-radius: 20px;
+    transition: 0.5s ease;
+}
+
+.slidebox .slidelist .slideitem > a img:hover {
+    opacity: 0.8;
+    transition: 0.5s ease;
+}
+
+.slidebox .slide-control [class*="control"] label {
+    position:absolute;
+    z-index:10;
+    top:50%;
+    transform:translateY(-50%);
+    padding:18px;
+    border-radius:50%;
+    cursor:pointer;
+}
+.slidebox .slide-control [class*="control"] label.prev {
+    left:-50px;
+    background:#333 url('media/left.png') center center / 100% no-repeat;
+}
+.slidebox .slide-control [class*="control"] label.next {
+    right:-50px;
+    background:#333 url('media/right.png') center center / 100% no-repeat;
+}
+
+[name="slide"] {display:none;}
+#slide01:checked ~ .slidelist .slideitem {left:0;}
+#slide02:checked ~ .slidelist .slideitem {left:-100%;}
+#slide03:checked ~ .slidelist .slideitem {left:-200%;}
+#slide04:checked ~ .slidelist .slideitem {left:-300%;}
+#slide05:checked ~ .slidelist .slideitem {left:-400%;}
+#slide06:checked ~ .slidelist .slideitem {left:-500%;}
+#slide07:checked ~ .slidelist .slideitem {left:-600%;}
+
+.slide-control [class*="control"] {display:none;}
+#slide01:checked ~ .slide-control .control01 {display:block;}
+#slide02:checked ~ .slide-control .control02 {display:block;}
+#slide03:checked ~ .slide-control .control03 {display:block;}
+#slide04:checked ~ .slide-control .control04 {display:block;}
+#slide05:checked ~ .slide-control .control05 {display:block;}
+#slide06:checked ~ .slide-control .control06 {display:block;}
+#slide07:checked ~ .slide-control .control07 {display:block;}
+
+.end{
+    background: linear-gradient(to left,#000000,#434343);
+    text-align: center;
+    max-width: 100%;
+    height: 80px;
+    color:#fff;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    padding:20px;
+    padding-right: 40px;
+
+    display: flex;
+    justify-content:space-between;
+}
+.end>.to-top{
+    color: #fff;
+    text-decoration: none;
+    border: 3px #fff solid ;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+
+
+
+@media (max-width: 800px){
+    .container{
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+    .header-content{
+        padding-left: -0px;
+    }
+    .last-content{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        justify-content: center;
+    }
+    .slidebox {
+        max-width:500px;
+        margin:0 auto;
+        position:relative;
+    }
+}
